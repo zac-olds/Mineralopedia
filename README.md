@@ -100,8 +100,6 @@ _The **Mineralopedia** MVPs described below will outline the project in clear an
 
 #### Wireframes
 
-> Use the Wireframes section to display desktop, tablet and mobile views. No hand-drawn wireframes. Use a tool like wireframe.cc, Whimsical or AdobeXD
-
 - Landing Screen
 
 ![Mobile Landing](https://i.imgur.com/kFn11TC.png)
