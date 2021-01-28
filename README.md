@@ -116,9 +116,9 @@ _The **Mineralopedia** MVPs described below will outline the project in clear an
 
 ![Sign In and Register](https://i.imgur.com/PErZiYO.png)
 
-- Comment and Update Comment Screen
+- Comment, Update Comment, Comments Screen
 
-![Comment](https://i.imgur.com/ZaRPGk4.png)
+![Comment](https://i.imgur.com/b3AiV4z.png)
 
 - Gallery and Search Screen
 
@@ -162,6 +162,7 @@ src
 | Task                      | Estimated Time | Time Invested | Actual Time |
 | ------------------------- | :------------: | :-----------: | :---------: |
 | Build models in rails     |     1 hrs      |     0 hrs     |     TBD     |
+| Find assets               |     4 hrs      |     0 hrs     |     TBD     |
 | Set up seed file          |     2 hrs      |     0 hrs     |     TBD     |
 | Build controllers         |     2 hrs      |     0 hrs     |     TBD     |
 | Build out routes          |     2 hrs      |     0 hrs     |     TBD     |
@@ -177,7 +178,6 @@ src
 | Build EditComment.jsx     |     3 hrs      |     0 hrs     |     TBD     |
 | Build Favorites.jsx       |     3 hrs      |     0 hrs     |     TBD     |
 | Build out Services        |     5 hrs      |     0 hrs     |     TBD     |
-| Find assets               |     4 hrs      |     0 hrs     |     TBD     |
 | TOTAL                     |     40 hrs     |     0 hrs     |     TBD     |
 
 <br>
@@ -186,7 +186,7 @@ src
 
 #### ERD Model
 
-![ERD Model](https://user-images.githubusercontent.com/74211758/106069848-ed8b7f00-60c8-11eb-838b-712df04f9c86.png)
+![ERD Model](https://i.imgur.com/39EjLbV.png)
 
 <br>
 
@@ -199,6 +199,7 @@ src
 - Add more minerals
 - Include rocks
 - Add more mineral criteria
+- User uploaded images
 
 ## Code Showcase
 
