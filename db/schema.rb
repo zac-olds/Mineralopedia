@@ -10,23 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_28_204235) do
+ActiveRecord::Schema.define(version: 2021_01_28_221033) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.string "content"
+    t.bigint "mineral_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["mineral_id"], name: "index_comments_on_mineral_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
 
   create_table "minerals", force: :cascade do |t|
     t.string "name"
     t.string "color"
     t.string "luster"
     t.string "steak"
-    t.integer "hardness"
     t.string "cleavage"
     t.string "fracture"
     t.text "description"
     t.string "img_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "hardness_min"
+    t.integer "hardness_max"
   end
 
   create_table "minerals_users", id: false, force: :cascade do |t|
@@ -42,4 +53,6 @@ ActiveRecord::Schema.define(version: 2021_01_28_204235) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "comments", "minerals"
+  add_foreign_key "comments", "users"
 end
