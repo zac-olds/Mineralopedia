@@ -18,8 +18,6 @@
 
 <br>
 
----
-
 ## Overview
 
 _**Mineralopedia** is a fully searchable database of common minerals and their properties that will act as a guide to proper identification and as a reference. Users will be able to register an account that will allow them to add minerals to favorites and add, edit, and delete comments._
@@ -35,31 +33,60 @@ _The **Mineralopedia** MVPs described below will outline the project in clear an
 ### Server (Back End) <!-- omit in toc -->
 
 - Have a RESTful JSON API:
-  - Build a Ruby on Rails server containing RESTful JSON endpoints. [ ]
-  - Build a database with at least 3 tables.- [x] Complete
-    - There must be at least 1 association between your tables. - [ ] Complete
-  - Utilize Rails to define models for interacting with the database. `Pending`
-  - Implement working generic controller actions for Full CRUD between your non-User tables `Pending` -`index` -`show` -`create` -`update` -`delete`
+  - Build a Ruby on Rails server containing RESTful JSON endpoints.
+  - Build a database with at least 3 tables.
+    - There must be at least 1 association between your tables.
+  - Utilize Rails to define models for interacting with the database.
+  - Implement working generic controller actions for Full CRUD between your non-User tables:
+  - `index`
+  - `show`
+  - `create`
+  - `update`
+  - `delete`
 
 ### Client (Front End) <!-- omit in toc -->
 
-- Have a working, interactive React app, built using `npx create-react-app` `Pending`
-  - Have at least 8 separate, rendered components in an organized and understandable React file structure `Pending
-  - Utilize functional and class React components appropriately `Pending`
-  - Utilize state and props in your components efficiently `Pending`
-  - Use only React for DOM Manipulation `Pending`
-- Consume data from your **Ruby on Rails API**, and render that data in your components.
-- Utilize **React Router**, for client-side routing.
-- Demonstrate Full CRUD actions ( `index`, `show`, `create`, `update`, and `delete` ) on the front end.
-  - _Note that if you decide to implement Auth, your full CRUD actions must be covered amongst your non-User tables._
+- Have a working, interactive React app, built using `npx create-react-app`.
+  - Have at least 8 separate, rendered components in an organized and understandable React file structure.
+  - Utilize functional and class React components appropriately.
+  - Utilize state and props in your components efficiently.
+  - Use only React for DOM Manipulation.
+- Consume data from your Ruby on Rails API, and render that data in your components.
+- Utilize React Router, for client-side routing.
+- Demonstrate Full CRUD actions on the front end.
+
+### Styling <!-- omit in toc -->
+
+- Be styled with CSS or SCSS.
+- Use Flexbox or Grid in your layout design.
+- Implement 2 media queries for responsive design on 3 screen sizes, including desktop.
+
+### Linting <!-- omit in toc -->
+
+- Indent properly.
+- Utilize high-quality, semantic variable names.
+- Follow `camelCase`, `snake_case`, and `kebab-case` conventions.
+- Remove unnecessary boilerplate React files and code.
+- Remove all unnecessary code, including commented out code.
+
+### Deployment <!-- omit in toc -->
+
+- Deploy a fully functional front-end via Surge or Netlify.
+- Deploy the back-end via Heroku.
+- Deploy early and often.
+
+### Procedural <!-- omit in toc -->
+
+- Initialize a git repo on Github, with a links to the deployed project.
+- Have **frequent commits**, making a _robust_ commit history at least every day. (75 commits minimum)
+- Use effective and safe **branching and merging** processes.
 
 ### Goals
 
-- _Lorem ipsum, dolor sit amet,_
-- _consectetur adipiscing elit._
-- _Phasellus dapibus fermentum risus vitae bibendum._
-- _Integer vel ipsum mollis odio sollicitudin ornare eu vel ex._
-- _etc._
+- _Build a utilitarian web application_
+- _Intuitive design_
+- _Looks professionally styled_
+- _Seamlessly integrate mobile, tablet, and desktop designs_
 
 <br>
 
@@ -67,13 +94,16 @@ _The **Mineralopedia** MVPs described below will outline the project in clear an
 
 > Use this section to list all supporting libraries and dependencies, and their role in the project. Below is an example - this needs to be replaced!
 
-|     Library      | Description                                |
-| :--------------: | :----------------------------------------- |
-|      React       | _Lorem ipsum dolor sit amet, consectetur._ |
-|   React Router   | _Lorem ipsum dolor sit amet, consectetur._ |
-| React SemanticUI | _Lorem ipsum dolor sit amet, consectetur._ |
-|     Express      | _Lorem ipsum dolor sit amet, consectetur._ |
-|  Express Router  | _Lorem ipsum dolor sit amet, consectetur._ |
+|     Library      | Description                                                                                                                |
+| :--------------: | :------------------------------------------------------------------------------------------------------------------------- |
+|      React       | _An open-source, front end, JavaScript library for building user interfaces or UI components._                             |
+|   React Router   | _Used to define multiple routes in the application._                                                                       |
+| React Router DOM | _A popular and well-supported library and is the most preferred routing library for React applications._                   |
+|      Axios       | _A great library for making client side HTTP calls._                                                                       |
+|      Rails       | _A model-view-controller (MVC) framework, providing default structures for a database, a web service, and web pages._      |
+|      Bcrypt      | _A password-hashing function designed by Niels Provos and David Mazières._                                                 |
+|       Cors       | _Allows restricted resources on a web page to be requested from another domain outside the first domain which was served._ |
+|  Express Router  | _Lorem ipsum dolor sit amet, consectetur._                                                                                 |
 
 <br>
 
