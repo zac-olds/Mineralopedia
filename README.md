@@ -35,9 +35,9 @@ _The **Mineralopedia** MVPs described below will outline the project in clear an
 ### Server (Back End) <!-- omit in toc -->
 
 - Have a RESTful JSON API:
-  - [ ] Build a Ruby on Rails server containing RESTful JSON endpoints. `Pending`
-  - Build a database with at least 3 tables. `Pending`
-    - There must be at least 1 association between your tables. `Pending`
+  - Build a Ruby on Rails server containing RESTful JSON endpoints. [ ]
+  - Build a database with at least 3 tables. [x]
+    - There must be at least 1 association between your tables. - [ ]
   - Utilize Rails to define models for interacting with the database. `Pending`
   - Implement working generic controller actions for Full CRUD between your non-User tables `Pending` -`index` -`show` -`create` -`update` -`delete`
 
