@@ -2,13 +2,11 @@
 
 - [Overview](#overview)
 - [MVP](#mvp)
-  - [Goals](#goals)
   - [Libraries and Dependencies](#libraries-and-dependencies)
   - [Client (Front End)](#client-front-end)
     - [Wireframes](#wireframes)
-    - [Component Tree](#component-tree)
     - [Component Hierarchy](#component-hierarchy)
-    - [Component Breakdown](#component-breakdown)
+    - [Component Tree](#component-tree)
     - [Time Estimates](#time-estimates)
   - [Server (Back End)](#server-back-end)
     - [ERD Model](#erd-model)
@@ -104,15 +102,29 @@ _The **Mineralopedia** MVPs described below will outline the project in clear an
 
 > Use the Wireframes section to display desktop, tablet and mobile views. No hand-drawn wireframes. Use a tool like wireframe.cc, Whimsical or AdobeXD
 
-![Mobile Landing](https://i.imgur.com/J18rDhe.png)
+- Landing Screen
 
-- Resource Show
+![Mobile Landing](https://i.imgur.com/kFn11TC.png)
 
-![Mineral Detail](https://i.imgur.com/eX0p8SO.png)
+- Mineral Identification and Favorites Screens
 
-- Popup Menu
+![Mineral ID and Favorites](https://i.imgur.com/7rKeDVs.png)
 
-![Popup Menu](https://i.imgur.com/iFG05aV.png)
+- Detail Screen and Popup Menu
+
+![Detail and Popup Menu](https://i.imgur.com/pGMgFlP.png)
+
+- Sign In and Register Screens
+
+![Sign In and Register](https://i.imgur.com/PErZiYO.png)
+
+- Comment and Update Comment Screen
+
+![Comment](https://i.imgur.com/ZaRPGk4.png)
+
+- Gallery and Search Screen
+
+![Gallery and Search](https://i.imgur.com/9UAvPgm.png)
 
 #### Component Hierarchy
 
@@ -154,21 +166,21 @@ src
 | Build models in rails     |     1 hrs      |     0 hrs     |     TBD     |
 | Set up seed file          |     2 hrs      |     0 hrs     |     TBD     |
 | Build controllers         |     2 hrs      |     0 hrs     |     TBD     |
-| Build out routes          |     3 hrs      |     2 hrs     |     TBD     |
-| Create React app          |     3 hrs      |     1 hrs     |     TBD     |
-| Build Home.jsx            |     6 hrs      |     3 hrs     |     TBD     |
-| Build Search.jsx          |     6 hrs      |     3 hrs     |     TBD     |
-| Build Nav.jsx             |     3 hrs      |     2 hrs     |     TBD     |
-| Build Layout.jsx          |     3 hrs      |     1 hrs     |     TBD     |
-| Build MineralIdentify.jsx |     3 hrs      |     2 hrs     |     TBD     |
-| Build Gallery.jsx         |     3 hrs      |     2 hrs     |     TBD     |
-| Build MineralDetail.jsx   |     3 hrs      |     1 hrs     |     TBD     |
-| Build Comment.jsx         |     6 hrs      |     3 hrs     |     TBD     |
-| Build EditComment.jsx     |     3 hrs      |     2 hrs     |     TBD     |
-| Build Favorites.jsx       |     3 hrs      |     1 hrs     |     TBD     |
-| Build out Services        |     6 hrs      |     3 hrs     |     TBD     |
-| Find assets               |     3 hrs      |     2 hrs     |     TBD     |
-| TOTAL                     |     6 hrs      |     3 hrs     |     TBD     |
+| Build out routes          |     2 hrs      |     0 hrs     |     TBD     |
+| Create React app          |     1 hrs      |     0 hrs     |     TBD     |
+| Build Home.jsx            |     2 hrs      |     0 hrs     |     TBD     |
+| Build Search.jsx          |     3 hrs      |     0 hrs     |     TBD     |
+| Build Nav.jsx             |     2 hrs      |     0 hrs     |     TBD     |
+| Build Layout.jsx          |     2 hrs      |     0 hrs     |     TBD     |
+| Build MineralIdentify.jsx |     3 hrs      |     0 hrs     |     TBD     |
+| Build Gallery.jsx         |     2 hrs      |     0 hrs     |     TBD     |
+| Build MineralDetail.jsx   |     2 hrs      |     0 hrs     |     TBD     |
+| Build Comment.jsx         |     3 hrs      |     0 hrs     |     TBD     |
+| Build EditComment.jsx     |     3 hrs      |     0 hrs     |     TBD     |
+| Build Favorites.jsx       |     3 hrs      |     0 hrs     |     TBD     |
+| Build out Services        |     5 hrs      |     0 hrs     |     TBD     |
+| Find assets               |     4 hrs      |     0 hrs     |     TBD     |
+| TOTAL                     |     40 hrs     |     0 hrs     |     TBD     |
 
 <br>
 
@@ -185,8 +197,10 @@ src
 ## Post-MVP
 
 - Stylized grid image landing page for desktop
-
----
+- Refine Mineral Identification search to account for edge cases (inputs that don't exactly match what is in the database)
+- Add more minerals
+- Include rocks
+- Add more mineral criteria
 
 ## Code Showcase
 
