@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   resources :users
-  # resources :comments
   resources :minerals, only: [:index, :show] do
     resources :comments
   end
