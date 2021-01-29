@@ -17,12 +17,12 @@ class CommentsController < ApplicationController
   # POST /comments
   def create
     @comment = Comment.new(comment_params)
-    @comment.user = current_user
-    @mineral = mineral.find(params[:mineral_id])
+    @comment.user = @current_user
+    @mineral = Mineral.find(params[:mineral_id])
     @comment.mineral = @mineral
 
     if @comment.save
-      render json: @comment, status: :created, location: @comment
+      render json: @comment, status: :created
     else
       render json: @comment.errors, status: :unprocessable_entity
     end
@@ -50,6 +50,6 @@ class CommentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def comment_params
-      params.require(:comment).permit(:content, :mineral_id, :user_id)
+      params.require(:comment).permit(:content)
     end
 end

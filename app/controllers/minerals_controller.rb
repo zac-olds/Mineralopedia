@@ -18,7 +18,7 @@ class MineralsController < ApplicationController
     @mineral = Mineral.find(params[:mineral_id])
     @user = User.find(params[:user_id])
     @user.minerals << @mineral
-    render json: @user, include :minerals
+    render json: @user, include: :minerals
   end
 
   # DESTROY /favorite/1
@@ -26,7 +26,7 @@ class MineralsController < ApplicationController
     @mineral = Mineral.find(params[:mineral_id])
     @user = User.find(params[:user_id])
     @user.minerals.delete(@mineral)
-    render json: @user, include :minerals
+    render json: @user, include: :minerals
   end
 
   private
