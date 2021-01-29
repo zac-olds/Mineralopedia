@@ -13,21 +13,21 @@ class MineralsController < ApplicationController
     render json: @mineral
   end
 
-  # POST /minerals
-  # def create
-  #   @mineral = Mineral.find(params[:mineral_id])
-  #   @user = User.find(params[:user_id])
-  #   @user.minerals << @mineral
-  #   render json: @user, include :minerals
-  # end
+  # POST /favorite
+  def favorite
+    @mineral = Mineral.find(params[:mineral_id])
+    @user = User.find(params[:user_id])
+    @user.minerals << @mineral
+    render json: @user, include :minerals
+  end
 
-  # DESTROY /minerals/1
-  # def destroy
-  #   @mineral = Mineral.find(params[:mineral_id])
-  #   @user = User.find(params[:user_id])
-  #   @user.minerals.delete(@mineral)
-  #   render json: @user, include :minerals
-  # end
+  # DESTROY /favorite/1
+  def unfavorite
+    @mineral = Mineral.find(params[:mineral_id])
+    @user = User.find(params[:user_id])
+    @user.minerals.delete(@mineral)
+    render json: @user, include :minerals
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -37,6 +37,6 @@ class MineralsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def mineral_params
-      params.require(:mineral).permit(:name, :color, :luster, :steak, :hardness, :cleavage, :fracture, :description, :img_url)
+      params.require(:mineral).permit(:name, :color, :luster, :streak, :hardness_min, :hardness_max, :cleavage, :fracture, :description, :img_url)
     end
 end
