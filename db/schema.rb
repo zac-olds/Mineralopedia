@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_28_221033) do
+ActiveRecord::Schema.define(version: 2021_01_29_161343) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(version: 2021_01_28_221033) do
     t.string "name"
     t.string "color"
     t.string "luster"
-    t.string "steak"
     t.string "cleavage"
     t.string "fracture"
     t.text "description"
@@ -38,6 +37,8 @@ ActiveRecord::Schema.define(version: 2021_01_28_221033) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "hardness_min"
     t.integer "hardness_max"
+    t.string "composition"
+    t.string "streak"
   end
 
   create_table "minerals_users", id: false, force: :cascade do |t|
