@@ -1,7 +1,11 @@
 // DEPENDENCIES
 import React, {useEffect, useState} from "react";
-import {useParams} from "react-router-dom";
+import {useParams, Link} from "react-router-dom";
+import {capitalStr} from "../services/helpers";
 import {getOneMineral} from "../services/minerals";
+import StarIcon from "@material-ui/icons/Star";
+import Button from "@material-ui/core/Button";
+import CommentIcon from "@material-ui/icons/Comment";
 
 // STYLES
 import "../styles/MineralDetail.css";
@@ -22,18 +26,39 @@ const MineralDetail = () => {
     fetchMineralData();
   }, [id]);
 
-  // debugger;
   return (
     <div>
-      <img src={mineral?.img_url} className="mineral-detail-image" />
-      <h2>{mineral?.name}</h2>
-      <p>{`Color: ${mineral?.color}`}</p>
-      <p>{`Luster: ${mineral?.luster}`}</p>
-      <p>{`Streak: ${mineral?.streak}`}</p>
-      <p>{`Hardness: ${mineral?.hardness_min}-${mineral?.hardness_max}`}</p>
-      <p>{`Cleavage: ${mineral?.cleavage}`}</p>
-      <p>{`Fracture: ${mineral?.fracture}`}</p>
-      <p>{mineral?.description}</p>
+      {mineral && (
+        <React.Fragment>
+          <div
+            style={{backgroundImage: `url(${mineral.img_url})`}}
+            className="mineral-detail-image"
+          >
+            <StarIcon />
+          </div>
+          <h2>{capitalStr(mineral?.name)}</h2>
+          <div>{`Color: ${mineral?.color}`}</div>
+          <div>{`Luster: ${mineral?.luster}`}</div>
+          <div>{`Streak: ${mineral?.streak}`}</div>
+          <div>{`Hardness: ${mineral?.hardness_min}-${mineral?.hardness_max}`}</div>
+          <div>{`Cleavage: ${mineral?.cleavage}`}</div>
+          <div>{`Fracture: ${mineral?.fracture}`}</div>
+          <br />
+          <div>{mineral?.description}</div>
+        </React.Fragment>
+      )}
+      <React.Fragment>
+        <Link to={`/minerals/${id}/comments`}>
+          <Button
+            variant="contained"
+            type="submit"
+            color="primary"
+            startIcon={<CommentIcon />}
+          >
+            Comment
+          </Button>
+        </Link>
+      </React.Fragment>
     </div>
   );
 };

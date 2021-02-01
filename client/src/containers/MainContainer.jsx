@@ -6,10 +6,11 @@ import {getAllMinerals} from "../services/minerals";
 // COMPONENTS
 import Minerals from "../screens/Minerals";
 import MineralDetail from "../screens/MineralDetail";
+import Comment from "../screens/Comment";
 
 const MainContainer = () => {
   const [minerals, setMinerals] = useState([]);
-  const history = useHistory();
+  // const history = useHistory();
 
   useEffect(() => {
     const fetchMinerals = async () => {
@@ -26,6 +27,9 @@ const MainContainer = () => {
       </Route>
       <Route exact path="/minerals/:id">
         <MineralDetail />
+      </Route>
+      <Route>
+        <Comment path="/minerals/:id/comments" />
       </Route>
     </Switch>
   );
