@@ -10,7 +10,7 @@ class MineralsController < ApplicationController
 
   # GET /minerals/1
   def show
-    render json: @mineral
+    render json: @mineral  include: [:users, comments:{include: :user}]
   end
 
   # POST /favorite
