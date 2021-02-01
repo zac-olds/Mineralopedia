@@ -9,9 +9,11 @@ import { loginUser, registerUser, removeToken, verifyUser } from './services/aut
 import Layout from './layouts/Layout';
 import Login from './screens/Login';
 import Register from './screens/Register';
+import MainContainer from './containers/MainContainer';
 
 // STYLES
 import './App.css';
+
 
 function App() {
   // Define current user to pass down as props
@@ -75,6 +77,9 @@ function App() {
             <Register
               handleRegister={handleRegister}
             />
+          </Route>
+          <Route path='/'>
+            <MainContainer currentUser={currentUser} />
           </Route>
         </Switch>
       </Layout>

@@ -22,14 +22,19 @@ import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 
 const useStyles = makeStyles({
   list: {
-    width: 250,
+    width: "200px",
+    // backgroundColor: "#180c2b",
   },
-  fullList: {
-    width: "auto",
-  },
+  // fullList: {
+  //   width: "300px",
+  //   backgroundColor: "#180c2b",
+  // },
+  // drawer: {
+  //   backgroundColor: "green",
+  // },
 });
 
-export default function TemporaryDrawer(props) {
+export default function MenuDrawer(props) {
   const {currentUser, handleLogout} = props;
   const classes = useStyles();
   const [state, setState] = React.useState({
@@ -51,7 +56,7 @@ export default function TemporaryDrawer(props) {
   const list = (anchor) => (
     <div
       className={clsx(classes.list, {
-        [classes.fullList]: anchor === "left" || anchor === "right",
+        // [classes.fullList]: anchor === "left" || anchor === "right",
       })}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
@@ -67,10 +72,10 @@ export default function TemporaryDrawer(props) {
               <p>{currentUser.username}</p>
             </React.Fragment>
           ) : (
-            <ListItemText primary="Login/Register" size="small" />
+            <ListItemText primary="Login" />
           )}
         </ListItem>
-        <ListItem button>
+        <ListItem button component={Link} to="/minerals">
           <ListItemIcon>
             <PhotoIcon />
           </ListItemIcon>
@@ -107,9 +112,7 @@ export default function TemporaryDrawer(props) {
             </ListItemIcon>
             <ListItemText primary="Log Out" />
           </ListItem>
-        ) : (
-          <></>
-        )}
+        ) : null}
       </List>
     </div>
   );
@@ -122,6 +125,7 @@ export default function TemporaryDrawer(props) {
           anchor={anchor}
           open={state[anchor]}
           onClose={toggleDrawer(anchor, false)}
+          // className={classes.drawer}
         >
           {list(anchor)}
         </Drawer>
