@@ -26,6 +26,10 @@ const MineralDetail = () => {
     fetchMineralData();
   }, [id]);
 
+  // Add favorite
+
+  // Remove favorite
+
   return (
     <div>
       {mineral && (
@@ -55,7 +59,7 @@ const MineralDetail = () => {
             color="primary"
             startIcon={<CommentIcon />}
           >
-            Comment
+            Comments
           </Button>
         </Link>
       </React.Fragment>

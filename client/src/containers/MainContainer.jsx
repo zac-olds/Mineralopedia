@@ -6,7 +6,7 @@ import {getAllMinerals} from "../services/minerals";
 // COMPONENTS
 import Minerals from "../screens/Minerals";
 import MineralDetail from "../screens/MineralDetail";
-import Comment from "../screens/Comment";
+import Comments from "../screens/Comments";
 
 const MainContainer = () => {
   const [minerals, setMinerals] = useState([]);
@@ -29,7 +29,7 @@ const MainContainer = () => {
         <MineralDetail />
       </Route>
       <Route>
-        <Comment path="/minerals/:id/comments" />
+        <Comments path="/minerals/:id/comments" />
       </Route>
     </Switch>
   );
