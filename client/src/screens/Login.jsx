@@ -60,6 +60,7 @@ const Login = (props) => {
         onChange={handleChange}
         autoComplete="password"
       />
+      <br />
       <Link to="/register">
         <Button
           variant="contained"

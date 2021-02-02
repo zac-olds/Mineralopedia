@@ -51,6 +51,7 @@ const MineralDetail = () => {
           <div>{mineral?.description}</div>
         </React.Fragment>
       )}
+      <br />
       <React.Fragment>
         <Link to={`/minerals/${id}/comments`}>
           <Button
