@@ -6,8 +6,11 @@
 # Mineral.create!(name: '', color: '', luster: '', streak: '', hardness_min: 6, hardness_max: 7, cleavage: '', fracture: '', composition: '',description: "", img_url: '')
 
 # DESTROYS
-User.destroy_all
+Comment.destroy_all
 Mineral.destroy_all
+User.destroy_all
+
+
 
 #USERS
 @admin = User.create!(username: 'admin', email: 'admin@mineral.com', password: 'password')
