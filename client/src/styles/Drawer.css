@@ -1,24 +1,24 @@
 .menu-icon {
-  fill: whitesmoke;
+  fill: whitesmoke !important;
   margin-top: 20px;
 }
 
 .MuiPaper-root {
-  background-color: #180c2b;
+  background-color: #180c2b !important;
 }
 
 .drawer-icon {
-  fill: whitesmoke;
+  fill: whitesmoke !important;
 }
 
 .drawer-text {
-  color: whitesmoke;
+  color: whitesmoke !important;
 }
 
 .MuiListItemText-primary {
-  color: whitesmoke;
+  color: whitesmoke !important;
 }
 
 .user-name {
-  color: whitesmoke;
+  color: whitesmoke !important;
 }

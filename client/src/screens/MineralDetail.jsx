@@ -31,24 +31,30 @@ const MineralDetail = () => {
   // Remove favorite
 
   return (
-    <div>
+    <div className="detail-container">
       {mineral && (
         <React.Fragment>
-          <div
+          {/* <div
             style={{backgroundImage: `url(${mineral.img_url})`}}
             className="mineral-detail-image"
-          >
-            <StarIcon />
+          > */}
+          {/* <StarIcon /> */}
+          {/* </div> */}
+          <img
+            className="detail-image"
+            src={mineral.img_url}
+            alt={mineral.name}
+          />
+          <h2 className="detail-title">{capitalStr(mineral?.name)}</h2>
+          <div className="mineral-details">
+            <div>{`Color: ${mineral?.color}`}</div>
+            <div>{`Luster: ${mineral?.luster}`}</div>
+            <div>{`Streak: ${mineral?.streak}`}</div>
+            <div>{`Hardness: ${mineral?.hardness_min}-${mineral?.hardness_max}`}</div>
+            <div>{`Cleavage: ${mineral?.cleavage}`}</div>
+            <div>{`Fracture: ${mineral?.fracture}`}</div>
           </div>
-          <h2>{capitalStr(mineral?.name)}</h2>
-          <div>{`Color: ${mineral?.color}`}</div>
-          <div>{`Luster: ${mineral?.luster}`}</div>
-          <div>{`Streak: ${mineral?.streak}`}</div>
-          <div>{`Hardness: ${mineral?.hardness_min}-${mineral?.hardness_max}`}</div>
-          <div>{`Cleavage: ${mineral?.cleavage}`}</div>
-          <div>{`Fracture: ${mineral?.fracture}`}</div>
-          <br />
-          <div>{mineral?.description}</div>
+          <div className="mineral-description">{mineral?.description}</div>
         </React.Fragment>
       )}
       <br />
@@ -58,6 +64,7 @@ const MineralDetail = () => {
             variant="contained"
             type="submit"
             color="primary"
+            id="detail-button"
             startIcon={<CommentIcon />}
           >
             Comments

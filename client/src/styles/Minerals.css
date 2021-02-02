@@ -1,4 +1,16 @@
 .mineral-image {
   width: 200px;
   height: auto;
+  margin: 5px 0px 5px 0px;
+  border-radius: 5%;
+}
+
+.gallery-container {
+  margin-left: 100px;
+  min-height: 100vh;
+  background-color: black;
+}
+
+.gallery-title {
+  color: whitesmoke;
 }

@@ -9,7 +9,7 @@ import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 import AssignmentIcon from "@material-ui/icons/Assignment";
 
 // STYLES
-// import "Login.css";
+import "../styles/Login.css";
 
 const Login = (props) => {
   // Set state for capture of form data
@@ -33,54 +33,57 @@ const Login = (props) => {
   };
 
   return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        handleLogin(formData);
-      }}
-    >
-      <h2>Login</h2>
-      <TextField
-        type="text"
-        name="username"
-        label="Username:"
-        variant="outlined"
-        size="small"
-        value={username}
-        onChange={handleChange}
-        autoComplete="username"
-      />
-      <TextField
-        type="password"
-        name="password"
-        label="Password:"
-        variant="outlined"
-        size="small"
-        value={password}
-        onChange={handleChange}
-        autoComplete="password"
-      />
-      <br />
-      <Link to="/register">
+    <div className="login-form">
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleLogin(formData);
+        }}
+      >
+        <h2>Login</h2>
+        <TextField
+          type="text"
+          name="username"
+          label="Username:"
+          variant="outlined"
+          size="small"
+          id="login-input"
+          value={username}
+          onChange={handleChange}
+          autoComplete="username"
+        />
+        <TextField
+          type="password"
+          name="password"
+          label="Password:"
+          variant="outlined"
+          size="small"
+          id="login-input"
+          value={password}
+          onChange={handleChange}
+          autoComplete="password"
+        />
         <Button
           variant="contained"
+          type="submit"
           color="primary"
-          // className={classes.button}
-          startIcon={<AssignmentIcon />}
+          id="login-button"
+          startIcon={<CheckCircleIcon />}
         >
-          Register
+          Login
         </Button>
-      </Link>
-      <Button
-        variant="contained"
-        type="submit"
-        color="primary"
-        // className={classes.button}
-        startIcon={<CheckCircleIcon />}
-      >
-        Login
-      </Button>
-    </form>
+        <Link to="/register">
+          <Button
+            variant="contained"
+            color="primary"
+            id="login-button"
+            startIcon={<AssignmentIcon />}
+          >
+            Register
+          </Button>
+        </Link>
+      </form>
+    </div>
   );
 };
 

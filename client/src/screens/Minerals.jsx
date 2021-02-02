@@ -6,8 +6,8 @@ const Minerals = (props) => {
   const {minerals} = props;
   // debugger;
   return (
-    <div>
-      <h2>Mineral Gallery</h2>
+    <div className="gallery-container">
+      <h2 className="gallery-title">Mineral Gallery</h2>
       {minerals.map((mineral) => {
         return (
           <Link to={`/minerals/${mineral.id}`} key={mineral.id}>

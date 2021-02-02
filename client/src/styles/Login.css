@@ -1,3 +1,13 @@
-.login-button {
+.login-form {
+  position: relative;
+  margin-left: 100px;
+}
+
+#login-input {
+  background-color: whitesmoke;
+}
+
+#login-button {
   background-color: #180c2b;
+  margin: 10px;
 }
