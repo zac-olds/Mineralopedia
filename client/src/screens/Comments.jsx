@@ -1,6 +1,6 @@
 // DEPENDENCIES
 import React, {useState, useEffect} from "react";
-import {postComment} from "../services/comments";
+import {postComment, getComment} from "../services/comments";
 import {useParams, Link} from "react-router-dom";
 
 // COMPONENTS
@@ -11,22 +11,23 @@ import Button from "@material-ui/core/Button";
 import CommentIcon from "@material-ui/icons/Comment";
 
 const Comments = (props) => {
-  const [mineral, setMineral] = useState(null);
+  const [comments, setComments] = useState(null);
   const {id} = useParams();
-  const {handleDelete, setComments} = props;
+  const {handleDelete} = props;
 
   useEffect(() => {
-    const mineralFind = props.minerals.find((mineral) => {
-      return mineral.id === Number(id);
-    });
-    setMineral(mineralFind);
+    const getComments = async () => {
+      const resp = await getComment(id);
+      setComments(resp);
+    };
+    getComments();
   }, []);
 
   return (
     <div>
       <h2>Comment</h2>
-      {mineral &&
-        mineral.comments.map((comment) => {
+      {comments &&
+        comments.map((comment) => {
           return (
             <Comment
               comment={comment}

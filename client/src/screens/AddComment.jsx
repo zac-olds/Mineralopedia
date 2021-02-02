@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {useParams, Link} from "react-router-dom";
+import {useParams, useHistory} from "react-router-dom";
 import {postComment} from "../services/comments";
 
 // MATERIAL UI IMPORTS
@@ -7,11 +7,14 @@ import Button from "@material-ui/core/Button";
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 import TextField from "@material-ui/core/TextField";
 
-const AddComment = () => {
+const AddComment = (props) => {
+  // const {comments, setComments} = props;
+
   const [formData, setFormData] = useState({
     content: "",
   });
   const {id} = useParams();
+  const history = useHistory();
 
   const {content} = formData;
 
@@ -24,10 +27,16 @@ const AddComment = () => {
     }));
   };
 
+  // Handles creating new posts
+  const handleCreate = async (mineral_id, commentData) => {
+    await postComment(mineral_id, commentData);
+    history.push(`/minerals/${id}/comments`);
+  };
+
   // Handle sumbitting form for posting comment
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    postComment(Number(id), formData);
+    handleCreate(id, formData);
   };
 
   return (

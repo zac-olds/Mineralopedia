@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from "react";
-import {useParams, Redirect} from "react-router-dom";
-import {getOneMineral} from "../services/minerals";
-import {putComment} from "../services/comments";
+import {useParams, useHistory} from "react-router-dom";
+import {putComment, getOneComment} from "../services/comments";
 
 // MATERIAL UI IMPORTS
 import Button from "@material-ui/core/Button";
@@ -12,12 +11,14 @@ const EditComment = () => {
   const [comment, setComment] = useState(null);
   // const [isUpdated, setUpdated] = useState(false);
   const {mineral_id, id} = useParams();
+  const history = useHistory();
 
   // State pulling in comment by ID
   useEffect(() => {
     const fetchMineralData = async () => {
-      const mineralData = await getOneMineral(mineral_id);
-      setComment(mineralData.comments[id - 1]);
+      const mineralData = await getOneComment(mineral_id, id);
+      console.log(mineralData);
+      setComment(mineralData);
     };
     fetchMineralData();
   }, [id]);
@@ -32,9 +33,12 @@ const EditComment = () => {
   };
 
   // Handle submitting form for editing a comment
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    putComment(comment.mineral_id, id, comment.content);
+    let commentData = await putComment(mineral_id, id, {
+      content: comment.content,
+    });
+    history.push(`/minerals/${mineral_id}/comments`);
   };
 
   return (
@@ -47,10 +51,10 @@ const EditComment = () => {
             label="Content:"
             variant="outlined"
             color="primary"
+            onChange={handleChange}
             multiline
             rowsMax={6}
             value={comment.content}
-            onChange={handleChange}
           />
           <br />
           <Button

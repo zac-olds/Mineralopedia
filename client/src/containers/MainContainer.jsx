@@ -21,7 +21,9 @@ const MainContainer = () => {
   useEffect(() => {
     const fetchMinerals = async () => {
       const mineralData = await getAllMinerals();
+      console.log(mineralData);
       setMinerals(mineralData);
+      setComments(mineralData);
     };
     fetchMinerals();
   }, []);
@@ -74,7 +76,11 @@ const MainContainer = () => {
         />
       </Route>
       <Route exact path="/minerals/:id/comments/add-comment">
-        <AddComment />
+        <AddComment
+          comments={comments}
+          setComments={setComments}
+          handleCreate={handleCreate}
+        />
       </Route>
       <Route exact path="/minerals/:mineral_id/comments/:id">
         <EditComment handleUpdate={handleUpdate} />
