@@ -35,7 +35,7 @@ const Comment = (props) => {
             color="primary"
             size="small"
             startIcon={<DeleteIcon />}
-            onClick={() => handleDelete(comment.id)}
+            onClick={() => handleDelete(props.comment.id)}
           >
             Delete
           </Button>

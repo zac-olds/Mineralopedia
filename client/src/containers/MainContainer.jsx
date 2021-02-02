@@ -28,13 +28,6 @@ const MainContainer = () => {
     fetchMinerals();
   }, []);
 
-  // Handles creating new posts
-  const handleCreate = async (mineral_id, commentData) => {
-    const newComment = await postComment(mineral_id, commentData);
-    console.log(newComment);
-    setComments((prevState) => [...prevState, newComment]);
-  };
-
   // Handles updating posts
   const handleUpdate = async (mineral_id, comment_id, commentData) => {
     const updatedComment = await putComment(
@@ -54,7 +47,7 @@ const MainContainer = () => {
     await deleteComment(id);
     setComments((prevState) =>
       prevState.filter((comment) => {
-        return comment.id !== id;
+        return comment.id !== Number(id);
       })
     );
   };
@@ -76,11 +69,7 @@ const MainContainer = () => {
         />
       </Route>
       <Route exact path="/minerals/:id/comments/add-comment">
-        <AddComment
-          comments={comments}
-          setComments={setComments}
-          handleCreate={handleCreate}
-        />
+        <AddComment comments={comments} setComments={setComments} />
       </Route>
       <Route exact path="/minerals/:mineral_id/comments/:id">
         <EditComment handleUpdate={handleUpdate} />

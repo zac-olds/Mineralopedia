@@ -1,6 +1,6 @@
 // DEPENDENCIES
 import React, {useState, useEffect} from "react";
-import {postComment, getComment} from "../services/comments";
+import {getComment, deleteComment} from "../services/comments";
 import {useParams, Link} from "react-router-dom";
 
 // COMPONENTS
@@ -10,10 +10,9 @@ import Comment from "./Comment";
 import Button from "@material-ui/core/Button";
 import CommentIcon from "@material-ui/icons/Comment";
 
-const Comments = (props) => {
+const Comments = () => {
   const [comments, setComments] = useState(null);
   const {id} = useParams();
-  const {handleDelete} = props;
 
   useEffect(() => {
     const getComments = async () => {
@@ -22,6 +21,15 @@ const Comments = (props) => {
     };
     getComments();
   }, []);
+
+  const handleDelete = async (id) => {
+    await deleteComment(id);
+    setComments((prevState) =>
+      prevState.filter((comment) => {
+        return comment.id !== Number(id);
+      })
+    );
+  };
 
   return (
     <div>

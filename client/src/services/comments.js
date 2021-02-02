@@ -20,7 +20,7 @@ export const putComment = async (mineral_id, comment_id, commentData) => {
   return resp.data;
 }
 
-export const deleteComment = async (mineral_id, comment_id) => {
-  const resp = await api.delete(`/minerals/${mineral_id}/comments/${comment_id}`);
+export const deleteComment = async (comment_id) => {
+  const resp = await api.delete(`/minerals/:slug/comments/${comment_id}`);
   return resp;
 }

@@ -20,11 +20,11 @@ export const registerUser = async (registerData) => {
 export const verifyUser = async () => {
   const token = localStorage.getItem('authToken');
   if (token) {
-    api.defaults.headers.common.authorazation = `Bearer${token}`;
+    api.defaults.headers.common.authorization = `Bearer ${token}`
     const resp = await api.get('/auth/verify');
-    return resp.data;
+    return resp.data
   }
-  return null;
+  return null
 }
 
 // Function to log out a user by setting their token equal to null
