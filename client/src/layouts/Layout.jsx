@@ -1,11 +1,12 @@
 import MenuDrawer from "./Drawer";
+import "../styles/Layout.css";
 
 const Layout = (props) => {
   const {currentUser, handleLogout} = props;
   return (
-    <div>
-      <header>
-        <h1>Mineralopedia</h1>
+    <div className="layout-div">
+      <header className="nav-header">
+        <h1 className="main-title">Mineralopedia</h1>
         <MenuDrawer currentUser={currentUser} handleLogout={handleLogout} />
       </header>
       {props.children}

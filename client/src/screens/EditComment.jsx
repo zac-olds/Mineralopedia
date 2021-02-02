@@ -17,11 +17,10 @@ const EditComment = () => {
   useEffect(() => {
     const fetchMineralData = async () => {
       const mineralData = await getOneComment(mineral_id, id);
-      console.log(mineralData);
       setComment(mineralData);
     };
     fetchMineralData();
-  }, [id]);
+  }, [mineral_id, id]);
 
   // Handle Change
   const handleChange = (event) => {
@@ -35,7 +34,7 @@ const EditComment = () => {
   // Handle submitting form for editing a comment
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let commentData = await putComment(mineral_id, id, {
+    await putComment(mineral_id, id, {
       content: comment.content,
     });
     history.push(`/minerals/${mineral_id}/comments`);

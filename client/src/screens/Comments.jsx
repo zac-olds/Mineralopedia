@@ -20,7 +20,7 @@ const Comments = () => {
       setComments(resp);
     };
     getComments();
-  }, []);
+  }, [id]);
 
   const handleDelete = async (id) => {
     await deleteComment(id);

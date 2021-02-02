@@ -2,6 +2,7 @@ import React from "react";
 import clsx from "clsx";
 import {makeStyles} from "@material-ui/core/styles";
 import {Link} from "react-router-dom";
+import "../styles/Drawer.css";
 
 // LIST COMPONENTS
 import Drawer from "@material-ui/core/Drawer";
@@ -65,11 +66,11 @@ export default function MenuDrawer(props) {
       <List>
         <ListItem button component={Link} to="/login">
           <ListItemIcon>
-            <AccountCircleIcon />
+            <AccountCircleIcon className="drawer-icon" />
           </ListItemIcon>
           {currentUser ? (
             <React.Fragment>
-              <p>{currentUser.username}</p>
+              <p className="user-name">{`Hello, ${currentUser.username}`}</p>
             </React.Fragment>
           ) : (
             <ListItemText primary="Login" />
@@ -77,25 +78,25 @@ export default function MenuDrawer(props) {
         </ListItem>
         <ListItem button component={Link} to="/minerals">
           <ListItemIcon>
-            <PhotoIcon />
+            <PhotoIcon className="drawer-icon" />
           </ListItemIcon>
           <ListItemText primary="Gallery" />
         </ListItem>
         <ListItem button>
           <ListItemIcon>
-            <SearchIcon />
+            <SearchIcon className="drawer-icon" />
           </ListItemIcon>
           <ListItemText primary="Search" />
         </ListItem>
         <ListItem button>
           <ListItemIcon>
-            <LocationSearchingIcon />
+            <LocationSearchingIcon className="drawer-icon" />
           </ListItemIcon>
           <ListItemText primary="Mineral ID" />
         </ListItem>
         <ListItem button>
           <ListItemIcon>
-            <StarIcon />
+            <StarIcon className="drawer-icon" />
           </ListItemIcon>
           <ListItemText primary="Favorites" />
         </ListItem>
@@ -108,7 +109,7 @@ export default function MenuDrawer(props) {
             color="primary"
           >
             <ListItemIcon>
-              <ExitToAppIcon />
+              <ExitToAppIcon className="drawer-icon" />
             </ListItemIcon>
             <ListItemText primary="Log Out" />
           </ListItem>
@@ -120,12 +121,13 @@ export default function MenuDrawer(props) {
   return (
     <div>
       <React.Fragment>
-        <Button onClick={toggleDrawer("left", true)}>{<MenuIcon />}</Button>
+        <Button onClick={toggleDrawer("left", true)}>
+          {<MenuIcon className="menu-icon" />}
+        </Button>
         <Drawer
           anchor={anchor}
           open={state[anchor]}
           onClose={toggleDrawer(anchor, false)}
-          // className={classes.drawer}
         >
           {list(anchor)}
         </Drawer>

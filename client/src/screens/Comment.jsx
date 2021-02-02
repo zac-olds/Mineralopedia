@@ -1,5 +1,5 @@
 import React from "react";
-import {Link, useParams} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 // MATERIAL UI IMPORTS
 import {Card, CardActions, CardContent, Button} from "@material-ui/core";
@@ -7,9 +7,7 @@ import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
 
 const Comment = (props) => {
-  // return <Redirect to={`/minerals/${id}/comments`} />;
-  const {handleDelete, comment, setComments} = props;
-  const {id} = useParams();
+  const {handleDelete} = props;
 
   return (
     <div>

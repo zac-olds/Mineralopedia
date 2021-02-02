@@ -1,0 +1,20 @@
+.layout-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-header {
+  background-color: #180c2b;
+  position: fixed;
+  height: 100%;
+  width: 100px;
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+}
+
+.main-title {
+  transform: rotate(-90deg);
+  margin-bottom: 75px;
+}

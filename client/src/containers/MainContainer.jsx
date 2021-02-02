@@ -2,7 +2,7 @@
 import {useState, useEffect} from "react";
 import {Switch, Route} from "react-router-dom";
 import {getAllMinerals} from "../services/minerals";
-import {deleteComment, postComment, putComment} from "../services/comments";
+import {putComment} from "../services/comments";
 
 // COMPONENTS
 import Minerals from "../screens/Minerals";
@@ -21,7 +21,6 @@ const MainContainer = () => {
   useEffect(() => {
     const fetchMinerals = async () => {
       const mineralData = await getAllMinerals();
-      console.log(mineralData);
       setMinerals(mineralData);
       setComments(mineralData);
     };
@@ -43,14 +42,6 @@ const MainContainer = () => {
   };
 
   // Handles deleting posts
-  const handleDelete = async (id) => {
-    await deleteComment(id);
-    setComments((prevState) =>
-      prevState.filter((comment) => {
-        return comment.id !== Number(id);
-      })
-    );
-  };
 
   return (
     <Switch>
@@ -62,10 +53,9 @@ const MainContainer = () => {
       </Route>
       <Route exact path="/minerals/:id/comments">
         <Comments
-          minerals={minerals}
-          comments={comments}
+          // minerals={minerals}
+          // comments={comments}
           setComments={setComments}
-          handleDelete={handleDelete}
         />
       </Route>
       <Route exact path="/minerals/:id/comments/add-comment">
