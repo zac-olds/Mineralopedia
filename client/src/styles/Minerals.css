@@ -1,0 +1,23 @@
+.mineral-image {
+  width: 225px;
+  height: auto;
+  margin: 5px 5px 5px 5px;
+  border-radius: 5%;
+}
+
+.gallery-container {
+  margin-left: 75px;
+  min-height: 100vh;
+  background-color: black;
+}
+
+.gallery-title {
+  color: whitesmoke;
+}
+
+@media only screen and (min-width: 750px) {
+  .mineral-image {
+    width: 400px;
+    height: auto;
+  }
+}

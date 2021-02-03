@@ -5,7 +5,7 @@ class MineralsController < ApplicationController
   def index
     @minerals = Mineral.all
 
-    render json: @minerals
+    render json: @minerals, include: [:users, comments: {include: :user}]
   end
 
   # GET /minerals/1

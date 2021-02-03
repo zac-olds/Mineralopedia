@@ -1,0 +1,31 @@
+.MuiCard-root {
+  margin: 10px;
+}
+
+#comment-button {
+  background-color: #180c2b;
+}
+
+.comment-image {
+  width: 225px;
+  height: auto;
+  margin: 5px 0px 5px 0px;
+  border-radius: 5%;
+  margin-bottom: 15px;
+}
+
+@media only screen and (min-width: 550px) {
+  .MuiCard-root {
+    width: 60vw;
+  }
+  .comment-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .comment-image {
+    width: 600px;
+    height: auto;
+  }
+}

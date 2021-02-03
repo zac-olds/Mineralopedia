@@ -1,0 +1,26 @@
+.edit-comment-container {
+  margin-left: 75px;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  margin: 10px 10px 10px 110px;
+}
+
+#edit-button {
+  background-color: #180c2b;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+@media only screen and (min-width: 550px) {
+  .edit-comment-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60vw;
+    align-self: center;
+  }
+  .edit-comment-container form {
+    width: 60vw;
+  }
+}
