@@ -34,18 +34,18 @@ const Login = (props) => {
 
   return (
     <div className="login-form">
+      <h2>Login</h2>
       <form
         onSubmit={(e) => {
           e.preventDefault();
           handleLogin(formData);
         }}
       >
-        <h2>Login</h2>
         <TextField
           type="text"
           name="username"
           label="Username:"
-          variant="outlined"
+          variant="standard"
           size="small"
           id="login-input"
           value={username}
@@ -56,7 +56,7 @@ const Login = (props) => {
           type="password"
           name="password"
           label="Password:"
-          variant="outlined"
+          variant="standard"
           size="small"
           id="login-input"
           value={password}

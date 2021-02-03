@@ -6,6 +6,9 @@ import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 
+// STYLES
+import "../styles/Register.css";
+
 const Register = (props) => {
   const [formData, setFormData] = useState({
     username: "",
@@ -32,44 +35,50 @@ const Register = (props) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div className="register-form">
       <h2>Register</h2>
-      <TextField
-        type="text"
-        name="username"
-        label="Username:"
-        variant="outlined"
-        size="small"
-        value={username}
-        onChange={handleChange}
-      />
-      <TextField
-        type="text"
-        name="email"
-        label="Email:"
-        variant="outlined"
-        size="small"
-        value={email}
-        onChange={handleChange}
-      />
-      <TextField
-        type="password"
-        name="password"
-        label="Password:"
-        variant="outlined"
-        size="small"
-        value={password}
-        onChange={handleChange}
-      />
-      <Button
-        variant="contained"
-        type="submit"
-        color="primary"
-        startIcon={<CheckCircleIcon />}
-      >
-        Submit
-      </Button>
-    </form>
+      <form onSubmit={handleSubmit}>
+        <TextField
+          type="text"
+          name="username"
+          label="Username:"
+          variant="standard"
+          size="small"
+          id="register-input"
+          value={username}
+          onChange={handleChange}
+        />
+        <TextField
+          type="text"
+          name="email"
+          label="Email:"
+          variant="standard"
+          size="small"
+          id="register-input"
+          value={email}
+          onChange={handleChange}
+        />
+        <TextField
+          type="password"
+          name="password"
+          label="Password:"
+          variant="standard"
+          size="small"
+          id="register-input"
+          value={password}
+          onChange={handleChange}
+        />
+        <Button
+          variant="contained"
+          type="submit"
+          color="primary"
+          id="register-button"
+          startIcon={<CheckCircleIcon />}
+        >
+          Submit
+        </Button>
+      </form>
+    </div>
   );
 };
 
