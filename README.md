@@ -1,5 +1,7 @@
 # Mineralopedia
 
+[Mineralopedia](https://mineralopedia.netlify.app/minerals)
+
 - [Overview](#overview)
 - [MVP](#mvp)
   - [Libraries and Dependencies](#libraries-and-dependencies)
