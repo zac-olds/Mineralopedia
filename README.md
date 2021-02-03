@@ -18,7 +18,7 @@
 
 ## Overview
 
-_**Mineralopedia** is a fully searchable database of common minerals and their properties that will act as a guide to proper identification and as a reference. Users will be able to register an account that will allow them to add minerals to favorites and add, edit, and delete comments._
+_**Mineralopedia** is a (soon to be fully searchable) database of common minerals and their properties that will act as a guide to proper identification and as a reference. Users will be able to register an account that will allow them to add minerals to favorites and add, edit, and delete comments._
 
 <br>
 
@@ -129,27 +129,26 @@ _The **Mineralopedia** MVPs described below will outline the project in clear an
 ```structure
 
 src
-|__ assets/
-      |__ fonts
-      |__ images
-|__ components/
-      |__ Nav.jsx
-      |__ Layout.jsx
+
+|__ containers/
       |__ MainContainer.jsx
+|__ layouts/
+      |__ Drawer.jsx
+      |__ Layout.jsx
 |__ services/
       |__ api-config.js
       |__ auth.js
       |__ minerals.js
       |__ comments.js
 |__ screens/
-      |__ Home.jsx
-      |__ Search.jsx
-      |__ MineralIdentify.jsx
-      |__ Gallery.jsx
-      |__ MineralDetail.jsx
+      |__ AddComment.jsx
       |__ Comment.jsx
+      |__ Comments.jsx
       |__ EditComment.jsx
-      |__ Favorites.jsx
+      |__ Login.jsx
+      |__ MineralDetail.jsx
+      |__ Minerals.jsx
+      |__ Register.jsx
 
 ```
 
@@ -161,24 +160,25 @@ src
 
 | Task                      | Estimated Time | Time Invested | Actual Time |
 | ------------------------- | :------------: | :-----------: | :---------: |
-| Build models in rails     |     1 hrs      |     0 hrs     |     TBD     |
-| Find assets               |     4 hrs      |     0 hrs     |     TBD     |
-| Set up seed file          |     2 hrs      |     0 hrs     |     TBD     |
-| Build controllers         |     2 hrs      |     0 hrs     |     TBD     |
-| Build out routes          |     2 hrs      |     0 hrs     |     TBD     |
-| Create React app          |     1 hrs      |     0 hrs     |     TBD     |
-| Build Home.jsx            |     2 hrs      |     0 hrs     |     TBD     |
-| Build Search.jsx          |     3 hrs      |     0 hrs     |     TBD     |
-| Build Nav.jsx             |     2 hrs      |     0 hrs     |     TBD     |
-| Build Layout.jsx          |     2 hrs      |     0 hrs     |     TBD     |
-| Build MineralIdentify.jsx |     3 hrs      |     0 hrs     |     TBD     |
-| Build Gallery.jsx         |     2 hrs      |     0 hrs     |     TBD     |
-| Build MineralDetail.jsx   |     2 hrs      |     0 hrs     |     TBD     |
-| Build Comment.jsx         |     3 hrs      |     0 hrs     |     TBD     |
-| Build EditComment.jsx     |     3 hrs      |     0 hrs     |     TBD     |
-| Build Favorites.jsx       |     3 hrs      |     0 hrs     |     TBD     |
-| Build out Services        |     5 hrs      |     0 hrs     |     TBD     |
-| TOTAL                     |     40 hrs     |     0 hrs     |     TBD     |
+| Build models in rails     |     1 hrs      |     4 hrs     |    4 hrs    |
+| Find assets               |     4 hrs      |     4 hrs     |    4 hrs    |
+| Set up seed file          |     2 hrs      |     2 hrs     |    2 hrs    |
+| Build controllers         |     2 hrs      |     4 hrs     |    4 hrs    |
+| Build out routes          |     2 hrs      |     4 hrs     |    4 hrs    |
+| Create React app          |     1 hrs      |     1 hrs     |    1 hrs    |
+| Build Home.jsx            |     2 hrs      |     0 hrs     |    0 hrs    |
+| Build Register/Login.jsx  |     2 hrs      |     2 hrs     |    2 hrs    |
+| Build Search.jsx          |     3 hrs      |     0 hrs     |    0 hrs    |
+| Build Nav.jsx             |     2 hrs      |     2 hrs     |    2 hrs    |
+| Build Layout.jsx          |     2 hrs      |     1 hrs     |    1 hrs    |
+| Build MineralIdentify.jsx |     3 hrs      |     0 hrs     |    0 hrs    |
+| Build Gallery.jsx         |     2 hrs      |     2 hrs     |    2 hrs    |
+| Build MineralDetail.jsx   |     2 hrs      |     2 hrs     |    2 hrs    |
+| Build Comment.jsx         |     3 hrs      |     4 hrs     |    4 hrs    |
+| Build EditComment.jsx     |     3 hrs      |     4 hrs     |    4 hrs    |
+| Build Favorites.jsx       |     3 hrs      |     0 hrs     |    0 hrs    |
+| Build out Services        |     5 hrs      |     4 hrs     |    4 hrs    |
+| TOTAL                     |     40 hrs     |    40 hrs     |   40 hrs    |
 
 <br>
 
@@ -195,15 +195,28 @@ src
 ## Post-MVP
 
 - Stylized grid image landing page for desktop
+- Add Search
+- Add Mineral ID
 - Refine Mineral Identification search to account for edge cases (inputs that don't exactly match what is in the database)
-- Add more minerals
-- Include rocks
-- Add more mineral criteria
+- Add Favorites
 - User uploaded images
 
 ## Code Showcase
 
-> TBD.
+```JAVASCRIPT
+// Converts plain text chemcial formulas and converts them so that they display with the prop subtext
+export const convertChemical = (str) => {
+  // split the string
+  // loop over array if element is a number then run .sub, if not return the element
+    return str.split('').map((e) => {
+      if (Number(e)) {
+        return e.sub()
+      } else {
+        return e
+      }
+    }).join('');
+  }
+```
 
 ## Code Issues & Resolutions
 
