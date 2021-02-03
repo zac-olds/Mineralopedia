@@ -41,8 +41,6 @@ const MainContainer = () => {
     );
   };
 
-  // Handles deleting posts
-
   return (
     <Switch>
       <Route exact path="/minerals">
@@ -52,11 +50,7 @@ const MainContainer = () => {
         <MineralDetail />
       </Route>
       <Route exact path="/minerals/:id/comments">
-        <Comments
-          // minerals={minerals}
-          // comments={comments}
-          setComments={setComments}
-        />
+        <Comments setComments={setComments} minerals={minerals} />
       </Route>
       <Route exact path="/minerals/:id/comments/add-comment">
         <AddComment comments={comments} setComments={setComments} />

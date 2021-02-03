@@ -1,12 +1,14 @@
 .comment-container {
-  margin-left: 100px;
+  margin-left: 75px;
 }
 
 .comment-container a {
   text-decoration: none;
 }
 
-#add-comment-buttom {
+#add-comment-button,
+#back-button {
   background-color: #180c2b;
-  margin-top: 25px;
+  margin-top: 15px;
+  margin-bottom: 25px;
 }

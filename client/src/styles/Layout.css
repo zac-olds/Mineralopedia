@@ -7,7 +7,8 @@
   background-color: #180c2b;
   position: fixed;
   height: 100%;
-  width: 100px;
+  /* width: 100px; */
+  width: 75px;
   color: whitesmoke;
   display: flex;
   flex-direction: column-reverse;

@@ -3,9 +3,11 @@ import React, {useEffect, useState} from "react";
 import {useParams, Link} from "react-router-dom";
 import {capitalStr} from "../services/helpers";
 import {getOneMineral} from "../services/minerals";
+
+// MATERIAL UI IMPORTS
 import Button from "@material-ui/core/Button";
 import CommentIcon from "@material-ui/icons/Comment";
-// import StarIcon from "@material-ui/icons/Star";
+import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 
 // STYLES
 import "../styles/MineralDetail.css";
@@ -81,6 +83,11 @@ const MineralDetail = () => {
             startIcon={<CommentIcon />}
           >
             Comments
+          </Button>
+        </Link>
+        <Link to={`/minerals`}>
+          <Button variant="contained" color="primary" id="detail-back-button">
+            <ArrowBackIcon />
           </Button>
         </Link>
       </React.Fragment>

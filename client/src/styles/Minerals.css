@@ -1,12 +1,12 @@
 .mineral-image {
-  width: 200px;
+  width: 225px;
   height: auto;
   margin: 5px 5px 5px 5px;
   border-radius: 5%;
 }
 
 .gallery-container {
-  margin-left: 100px;
+  margin-left: 75px;
   min-height: 100vh;
   background-color: black;
 }

@@ -9,13 +9,19 @@ import Comment from "./Comment";
 // MATERIAL UI IMPORTS
 import Button from "@material-ui/core/Button";
 import CommentIcon from "@material-ui/icons/Comment";
+import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 
 // STYLES
 import "../styles/Comments.css";
 
-const Comments = () => {
+const Comments = (props) => {
   const [comments, setComments] = useState(null);
   const {id} = useParams();
+  const {minerals} = props;
+  const findMineral = minerals.filter((mineral) => {
+    return mineral.id === Number(id);
+  });
+  console.log(findMineral);
 
   useEffect(() => {
     const getComments = async () => {
@@ -36,7 +42,12 @@ const Comments = () => {
 
   return (
     <div className="comment-container">
-      <h2>Comment</h2>
+      <h2>Comments</h2>
+      <img
+        className="comment-image"
+        src={findMineral[0].img_url}
+        alt={findMineral[0].name}
+      />
       {comments &&
         comments.map((comment) => {
           return (
@@ -51,12 +62,16 @@ const Comments = () => {
       <Link to={`/minerals/${id}/comments/add-comment`}>
         <Button
           variant="contained"
-          type="submit"
           color="primary"
-          id="add-comment-buttom"
+          id="add-comment-button"
           startIcon={<CommentIcon />}
         >
           Add Comment
+        </Button>
+      </Link>
+      <Link to={`/minerals/${id}`}>
+        <Button variant="contained" color="primary" id="back-button">
+          <ArrowBackIcon />
         </Button>
       </Link>
     </div>
