@@ -127,6 +127,7 @@ export default function MenuDrawer(props) {
         <Drawer
           anchor={anchor}
           open={state[anchor]}
+          id="drawer"
           onClose={toggleDrawer(anchor, false)}
         >
           {list(anchor)}

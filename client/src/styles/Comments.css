@@ -1,0 +1,12 @@
+.comment-container {
+  margin-left: 100px;
+}
+
+.comment-container a {
+  text-decoration: none;
+}
+
+#add-comment-buttom {
+  background-color: #180c2b;
+  margin-top: 25px;
+}

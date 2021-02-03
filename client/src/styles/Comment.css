@@ -1,0 +1,19 @@
+.MuiCard-root {
+  margin: 10px;
+}
+
+#comment-button {
+  background-color: #180c2b;
+}
+
+@media only screen and (min-width: 550px) {
+  .MuiCard-root {
+    width: 60vw;
+  }
+  .comment-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

@@ -10,6 +10,9 @@ import Comment from "./Comment";
 import Button from "@material-ui/core/Button";
 import CommentIcon from "@material-ui/icons/Comment";
 
+// STYLES
+import "../styles/Comments.css";
+
 const Comments = () => {
   const [comments, setComments] = useState(null);
   const {id} = useParams();
@@ -32,7 +35,7 @@ const Comments = () => {
   };
 
   return (
-    <div>
+    <div className="comment-container">
       <h2>Comment</h2>
       {comments &&
         comments.map((comment) => {
@@ -50,6 +53,7 @@ const Comments = () => {
           variant="contained"
           type="submit"
           color="primary"
+          id="add-comment-buttom"
           startIcon={<CommentIcon />}
         >
           Add Comment

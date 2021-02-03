@@ -3,9 +3,9 @@ import React, {useEffect, useState} from "react";
 import {useParams, Link} from "react-router-dom";
 import {capitalStr} from "../services/helpers";
 import {getOneMineral} from "../services/minerals";
-import StarIcon from "@material-ui/icons/Star";
 import Button from "@material-ui/core/Button";
 import CommentIcon from "@material-ui/icons/Comment";
+// import StarIcon from "@material-ui/icons/Star";
 
 // STYLES
 import "../styles/MineralDetail.css";
@@ -47,12 +47,25 @@ const MineralDetail = () => {
           />
           <h2 className="detail-title">{capitalStr(mineral?.name)}</h2>
           <div className="mineral-details">
-            <div>{`Color: ${mineral?.color}`}</div>
-            <div>{`Luster: ${mineral?.luster}`}</div>
-            <div>{`Streak: ${mineral?.streak}`}</div>
-            <div>{`Hardness: ${mineral?.hardness_min}-${mineral?.hardness_max}`}</div>
-            <div>{`Cleavage: ${mineral?.cleavage}`}</div>
-            <div>{`Fracture: ${mineral?.fracture}`}</div>
+            <div>
+              Color:<em>{` ${mineral?.color}`}</em>
+            </div>
+            <div>
+              Luster:<em>{` ${mineral?.luster}`}</em>
+            </div>
+            <div>
+              Streak:<em>{` ${mineral?.streak}`}</em>
+            </div>
+            <div>
+              Hardness:
+              <em>{` ${mineral?.hardness_min}-${mineral?.hardness_max}`}</em>
+            </div>
+            <div>
+              Cleavage:<em>{` ${mineral?.cleavage}`}</em>
+            </div>
+            <div>
+              Fracture:<em>{` ${mineral?.fracture}`}</em>
+            </div>
           </div>
           <div className="mineral-description">{mineral?.description}</div>
         </React.Fragment>

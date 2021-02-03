@@ -7,6 +7,9 @@ import Button from "@material-ui/core/Button";
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 import TextField from "@material-ui/core/TextField";
 
+// STYLES
+import "../styles/AddComment.css";
+
 const AddComment = (props) => {
   // const {comments, setComments} = props;
 
@@ -40,21 +43,24 @@ const AddComment = (props) => {
   };
 
   return (
-    <div>
+    <div className="add-comment-container">
       <form onSubmit={handleSubmit}>
         <TextField
           type="text"
           name="content"
           label="Comment:"
-          variant="outlined"
+          variant="standard"
           value={content}
           onChange={handleChange}
+          multiline
+          rowsMax={4}
         />
         <br />
         <Button
           variant="contained"
           type="submit"
           color="primary"
+          id="submit-comment-button"
           startIcon={<CheckCircleIcon />}
         >
           Submit

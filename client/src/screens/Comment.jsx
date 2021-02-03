@@ -1,3 +1,4 @@
+// DEPENDENCIES
 import React from "react";
 import {Link} from "react-router-dom";
 
@@ -5,6 +6,9 @@ import {Link} from "react-router-dom";
 import {Card, CardActions, CardContent, Button} from "@material-ui/core";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
+
+// STYLES
+import "../styles/Comment.css";
 
 const Comment = (props) => {
   const {handleDelete} = props;
@@ -22,6 +26,7 @@ const Comment = (props) => {
               type="submit"
               color="primary"
               size="small"
+              id="comment-button"
               startIcon={<EditIcon />}
             >
               Edit
@@ -32,6 +37,7 @@ const Comment = (props) => {
             type="submit"
             color="primary"
             size="small"
+            id="comment-button"
             startIcon={<DeleteIcon />}
             onClick={() => handleDelete(props.comment.id)}
           >
